@@ -18,4 +18,4 @@ compile:
 test:
 publish:
 	npm publish
-	cnpm sync zero-declare
+	cnpm sync zero-colors
