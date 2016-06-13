@@ -3,14 +3,14 @@
   "title": "zero-colors",
   "description": "javascript module for maintaining colors",
   "homepage": "https://github.com/leungwensen/zero-colors",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "main": "lib/index.js",
   "author": "leungwensen",
   "bugs": {
     "url": "http://gitlab.alipay-inc.com/zero/color/issues"
   },
   "dependencies": {
-    "zero-lang": "^0.1.0"
+    "zero-lang": "^0.1.2"
   },
   "devDependencies": {
     "babel-cli": "^6.7.7",
