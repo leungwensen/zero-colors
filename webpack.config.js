@@ -1,35 +1,29 @@
-const path = require('path');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const path = require('path')
+
+function resolve (pathname) {
+  return path.resolve(__dirname, pathname)
+}
 
 module.exports = {
   entry: {
-    'demo/index': path.resolve(__dirname, './demo/index.demo.js'),
-    'spec/index': path.resolve(__dirname, './spec/index.spec.js')
+    'dist/zero-colors': resolve('./lib/index')
   },
   output: {
-    path: path.resolve(__dirname),
-    publicPath: '/',
-    filename: '[name].js'
+    filename: '[name].js',
+    library: 'Color',
+    libraryTarget: 'umd',
+    path: resolve('./')
   },
-  alias: {},
-  resolveLoader: {},
   module: {
     loaders: [
       {
-        test: /\.js[x]?$/,
+        test: /\.js$/,
+        exclude: /(node_modules|bower_components)/,
         loader: 'babel-loader',
-        exclude: /locale/,
         query: {
-          presets: [
-            'es2015'
-          ]
+          presets: ['es2015']
         }
       }
     ]
-  },
-  externals: {
-    'jquery': 'jQuery'
-  },
-  devtool: 'source-map'
-};
-
+  }
+}

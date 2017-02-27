@@ -1,22 +1,19 @@
 {
+  "parser": "babel-eslint",
   "env": {
     "browser": true,
+    "es6": true,
     "node": true,
     "mocha": true
   },
   "extends": [
-    "eslint-config-airbnb"
+    "standard"
   ],
   "globals": {
     "chai": true
   },
   "rules": {
-    "key-spacing": 0,
     "no-cond-assign": 0,
-    "no-param-reassign": 0,
-    "no-restricted-syntax": 0,
-    "prefer-rest-params": 0,
-    "strict": 0,
     "max-len": [
       2,
       120,
@@ -24,10 +21,6 @@
       {
         "ignoreUrls": true
       }
-    ],
-    "comma-dangle": [
-      2,
-      "never"
     ],
     "id-length": [
       2,

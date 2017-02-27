@@ -1,14 +1,26 @@
-const lang = require('zero-lang');
-const webpackConf = require('./webpack.config');
+const path = require('path')
+const webpackConfig = require('./webpack.config')
 
-module.exports = lang.extend({
+function resolve (pathname) {
+  return path.resolve(__dirname, pathname)
+}
+
+const webpackDevConfig = Object.assign({}, webpackConfig, {
+  cache: false,
   devServer: {
     stats: {
       cached: false,
       exclude: [
-        /node_modules[\\\/]/
+        /node_modules[\\/]/
       ],
       colors: true
-    }
-  }
-}, webpackConf);
+    },
+    contentBase: resolve('./'),
+    compress: true,
+    host: '0.0.0.0',
+    port: 2012
+  },
+  devtool: 'source-map'
+})
+
+module.exports = webpackDevConfig
